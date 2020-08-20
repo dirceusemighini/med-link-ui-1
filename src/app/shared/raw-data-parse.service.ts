@@ -144,19 +144,19 @@ export class RawDataService {
     uptimeSensorInMinutesRegex = /Sensor\scycle\stime:\s(\d+?)min/; //sensor uptime
     expectedBloodGlucoseRegex = /BG\starget:\s(\d+)-(\d+)\n/; //
     batteryVoltageRegex = /Pump\sbattery:\s(\d.+?)V/; // Battery voltage
-    insulinInPompLeftRegex = /Reservoir:\s+?(\d{1,3}).\d{2}J/; //Remaining Insulinn
-    baseBasalRegex = /Basal:\s([\d\.]+).J\/h\n/;
+    insulinInPompLeftRegex = /Reservoir:\s+?(\d{1,3}).\d{2}u/; //Remaining Insulinn
+    baseBasalRegex = /Basal:\s([\d\.]+).u\/h\n/;
     temporaryBasalMethodPercentage = /TBR:\s+?(\d+)%\s+?(\d+).+?(\d+)m/;
-    totalInsulinGivenTodayRegex = /Insulin\stoday:([\d\.]+)J\n/;//Today total dosage
-    totalInsulinGivenYesterdayRegex = /Insulin\syesterday:\s([\d\.]+)J\n/;//Yestertday total dosage 
-    maximumBolusSettingRegex = /Max.\sbolus:\s+?([\d\.]+)/;
+    totalInsulinGivenTodayRegex = /Insulin\stoday:([\d\.]+)u\n/;//Today total dosage
+    totalInsulinGivenYesterdayRegex = /Insulin\syesterday:\s([\d\.]+)u\n/;//Yestertday total dosage 
+    maximumBolusSettingRegex = /Max\.\sbolus:\s+?([\d\.]+)/;
     incrementStepSettingRegex = /Easy\sbolus\sstep:\s([\d\.]+)/;
-    maximumBasalSettingsRegex = /Max.\sbasal\srate:\s([\d\.]+)J\/h\n/;
+    maximumBasalSettingsRegex = /Max\.\sbasal\srate:\s([\d\.]+)u\/h\n/;
     insulinWorkTimeSettingsRegex = /Insulin\sduration\stime:\s(\d+)h\n/;
     insulinSensitiveFactorSettingsRegex = /Insulin\ssensivity\sfactor:\s(\d+?)(\w+\/\w+)\n/;
     insulinToCabRatioRegex = /Carb\sratio:\s(\d+?)(\w+\/\w+)/; // Wsp\.weglowod -> Carb ratio
     stanPumpRegex = /Pump\state: (\S+)/; //pump status
-    ww = /Interval\s(\d{1}):\s(.\W\d{3})\sJ\/WW\sstart\stime\s(\d{2}:\d{2})/; // Interval start time
+    ww = /Interval\s(\d{1}):\s(.\W\d{3})\su\/WW\sstart\stime\s(\d{2}:\d{2})/; // Interval start time
     isf = /Interval\s(\d{1}):\s\s?(\d{2,3})mg.dl\sstart\stime\s(\d{2}:\d{2})/; // Interval start time
     bgRange = /Interval\s(\d{1}):\s?(\d{2,3}-.\d{2,3})\sstart\stime\s(\d{2}:\d{2})/; // Interval start time
 
