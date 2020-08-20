@@ -138,26 +138,26 @@ export class RawDataService {
     }
     pumpDataRegex = /(\d{2}-\d{2}-\d{4}\s\d{2}:\d{2})\s+?(\d{1,3})%/;
     bloodGlucoseRegex = /BG:(\s?\d+?)\s(\d{2}-\d{2}-\d{2}\s\d{2}:\d{2})/;
-    lastBolusRegex = /BL:([\d\.]+?)\s(\d{2}-\d{2}-\d{2}\s+?\d{1,2}:\d{2})/;
-    temporaryBasalMethodUnitsPerHourRegex = /PD:([\d\.]+?)\sPodano:\s([\d\.]+?)\nCzas\sPD:\s(\d+?)m\s\/\s(\d+?)m/;
-    nextCalibrationRegex = /Nastepna\skalib:\s(\d+?):(\d+?)\n/;
-    uptimeSensorInMinutesRegex = /Czas\ssensora:\s(\d+?)min/;
-    expectedBloodGlucoseRegex = /Cel\sBG\ssensor:\s(\d+)-(\d+)\n/;
-    batteryVoltageRegex = /Bateria pompy:\s(\d.+?)V/;
-    insulinInPompLeftRegex = /Zbiorniczek:\s+?(\d{1,3}).\d{2}J/;
-    baseBasalRegex = /Baza:\s([\d\.]+).J\/h\n/;
-    temporaryBasalMethodPercentage = /TDP:\s+?(\d+)%\s+?(\d+).+?(\d+)m/;
-    totalInsulinGivenTodayRegex = /Dawka\sdziasiaj:([\d\.]+)J\n/;
-    totalInsulinGivenYesterdayRegex = /Dawka\swczoraj:\s([\d\.]+)J\n/;
-    maximumBolusSettingRegex = /maksymalny bolus:\s+?([\d\.]+)/;
-    incrementStepSettingRegex = /krok\sbolusa:\s([\d\.]+)/;
-    maximumBasalSettingsRegex = /Max\.\sbaza:\s([\d\.]+)J\/h\n/;
-    insulinWorkTimeSettingsRegex = /Czas\sinsuliny:\s(\d+)h\n/;
-    insulinSensitiveFactorSettingsRegex = /Wsp\.insulin:\s(\d+?)(\w+\/\w+)\n/;
-    insulinToCabRatioRegex = /Wsp\.weglowod:\s(\d+?)(\w+\/\w+)/;
-    stanPumpRegex = /Stan pompy: (\S+)/;
-    ww = /zakres\s(\d{1}):\s(.\W\d{3})\sJ\/WW\sstart\sgodz.\s(\d{2}:\d{2})/;
-    isf = /zakres\s(\d{1}):\s\s?(\d{2,3})mg.dl\sstart\sgodz.\s(\d{2}:\d{2})/;
-    bgRange = /zakres\s(\d{1}):\s?(\d{2,3}-.\d{2,3})\sstart\sgodz.\s(\d{2}:\d{2})/;
+    lastBolusRegex = /Last\sbolus:([\d\.]+?)\s(\d{2}-\d{2}-\d{2}\s+?\d{1,2}:\d{2})/;//BL -> Last bolus
+    temporaryBasalMethodUnitsPerHourRegex = /Temp:([\d\.]+?)\sPodano:\s([\d\.]+?)\nCzas\sPD:\s(\d+?)m\s\/\s(\d+?)m/; // PD:Podano: Czas PD -> Temp basal units Temp basal time
+    nextCalibrationRegex = /Next\scalibration\stime:\s(\d+?):(\d+?)\n/;
+    uptimeSensorInMinutesRegex = /Sensor\scycle\stime:\s(\d+?)min/; //sensor uptime
+    expectedBloodGlucoseRegex = /BG\starget:\s(\d+)-(\d+)\n/; //
+    batteryVoltageRegex = /Pump\sbattery:\s(\d.+?)V/; // Battery voltage
+    insulinInPompLeftRegex = /Reservoir:\s+?(\d{1,3}).\d{2}J/; //Remaining Insulinn
+    baseBasalRegex = /Basal:\s([\d\.]+).J\/h\n/;
+    temporaryBasalMethodPercentage = /TBR:\s+?(\d+)%\s+?(\d+).+?(\d+)m/;
+    totalInsulinGivenTodayRegex = /Insulin\stoday:([\d\.]+)J\n/;//Today total dosage
+    totalInsulinGivenYesterdayRegex = /Insulin\syesterday:\s([\d\.]+)J\n/;//Yestertday total dosage 
+    maximumBolusSettingRegex = /Max.\sbolus:\s+?([\d\.]+)/;
+    incrementStepSettingRegex = /Easy\sbolus\sstep:\s([\d\.]+)/;
+    maximumBasalSettingsRegex = /Max.\sbasal\srate:\s([\d\.]+)J\/h\n/;
+    insulinWorkTimeSettingsRegex = /Insulin\sduration\stime:\s(\d+)h\n/;
+    insulinSensitiveFactorSettingsRegex = /Insulin\ssensivity\sfactor:\s(\d+?)(\w+\/\w+)\n/;
+    insulinToCabRatioRegex = /Carb\sratio:\s(\d+?)(\w+\/\w+)/; // Wsp\.weglowod -> Carb ratio
+    stanPumpRegex = /Pump\state: (\S+)/; //pump status
+    ww = /Interval\s(\d{1}):\s(.\W\d{3})\sJ\/WW\sstart\stime\s(\d{2}:\d{2})/; // Interval start time
+    isf = /Interval\s(\d{1}):\s\s?(\d{2,3})mg.dl\sstart\stime\s(\d{2}:\d{2})/; // Interval start time
+    bgRange = /Interval\s(\d{1}):\s?(\d{2,3}-.\d{2,3})\sstart\stime\s(\d{2}:\d{2})/; // Interval start time
 
 }
